@@ -14,6 +14,9 @@ class TestCalculator:
         def test_sum_negative_values(self):
             assert -3 == Calculator.sum(-1,-2)
 
+        def test_sum_decimal_values(self):
+            assert 0.3 == Calculator.sum(0.1,0.2)
+
         def test_sum_invalid_values(self):
             with pytest.raises(TypeError, match="thats not a number."):
                 Calculator.sum('a','b')
@@ -24,6 +27,9 @@ class TestCalculator:
 
         def test_divide_negative_values(self):
             assert -3 == Calculator.divide(-9,3)
+
+        def test_divide_decimal_values(self):
+            assert 3 == Calculator.divide(0.9,0.3)
 
         def test_divide_invalid_values(self):
             with pytest.raises(TypeError, match="thats not a number."):
